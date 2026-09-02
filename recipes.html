@@ -76,6 +76,19 @@
             text-decoration: none;
             color: black;
         }
+        .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.recipe-card {
+    border: 1px solid black;
+    padding: 20px;
+    min-height: 150px;
+}
     </style>
 </head>
 
@@ -105,7 +118,45 @@
     </nav>
 
     <main>
-        <h2>All Recipes</h2>
+        <main>
+
+    <h2>All Recipes</h2>
+
+    <div class="recipe-grid">
+
+        <article class="recipe-card">
+            <h3>Recipe One</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe Two</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe Three</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe Four</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe Five</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe Six</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+    </div>
+
+</main>
     </main>
 
     <script>
