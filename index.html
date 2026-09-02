@@ -6,23 +6,31 @@
     <title>Mushrooms & Mixing Bowls</title>
 
     <style>
-        /* Basic structure for the header */
+        /* Header */
         header {
+            position: relative;
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 15px;
+            justify-content: center;
+            height: 70px;
         }
 
-        /* The three-line menu button */
+        /* Menu button */
         #menu-button {
+            position: absolute;
+            left: 20px;
             font-size: 28px;
             background: none;
             border: none;
             cursor: pointer;
         }
 
-        /* The sidebar */
+        /* Website title */
+        h1 {
+            margin: 0;
+        }
+
+        /* Sidebar */
         #sidebar {
             position: fixed;
             top: 0;
@@ -33,14 +41,15 @@
             border-right: 1px solid black;
             transition: left 0.3s ease;
             padding-top: 70px;
+            z-index: 1000;
         }
 
-        /* Sidebar when it is open */
+        /* Sidebar when open */
         #sidebar.open {
             left: 0;
         }
 
-        /* Buttons inside the sidebar */
+        /* Navigation links */
         #sidebar a {
             display: block;
             padding: 15px 20px;
@@ -76,7 +85,7 @@
         const menuButton = document.getElementById("menu-button");
         const sidebar = document.getElementById("sidebar");
 
-        menuButton.addEventListener("click", function() {
+        menuButton.addEventListener("click", function () {
             sidebar.classList.toggle("open");
         });
     </script>
