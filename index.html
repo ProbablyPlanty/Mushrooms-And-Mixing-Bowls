@@ -23,6 +23,7 @@
             background: none;
             border: none;
             cursor: pointer;
+            z-index: 2000;
         }
 
         /* Website title */
@@ -85,8 +86,20 @@
         const menuButton = document.getElementById("menu-button");
         const sidebar = document.getElementById("sidebar");
 
-        menuButton.addEventListener("click", function () {
+        // Open or close the sidebar when the menu button is clicked
+        menuButton.addEventListener("click", function (event) {
+            event.stopPropagation();
             sidebar.classList.toggle("open");
+        });
+
+        // Stop clicks inside the sidebar from closing it
+        sidebar.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+        // Close the sidebar when clicking anywhere else
+        document.addEventListener("click", function () {
+            sidebar.classList.remove("open");
         });
     </script>
 
