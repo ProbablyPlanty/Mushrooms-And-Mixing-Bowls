@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dinner Recipes | Mushrooms & Mixing Bowls</title>
+
+    <style>
+        /* Header */
+        header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+        }
+
+        /* Menu button */
+        #menu-button {
+            position: absolute;
+            left: 20px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        /* Website title */
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+        }
+        /* Search bar */
+        #search-container {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+        }
+
+        #search-input {
+            width: 160px;
+            padding: 8px;
+        }
+
+        #search-button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: white;
+            border-right: 1px solid black;
+            transition: left 0.3s ease;
+            padding-top: 70px;
+            z-index: 1000;
+        }
+
+        /* Sidebar when open */
+        #sidebar.open {
+            left: 0;
+        }
+
+        /* Navigation links */
+        #sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.recipe-card {
+    border: 1px solid black;
+    padding: 20px;
+    min-height: 150px;
+}
+        .recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <button id="menu-button" aria-label="Open navigation menu">☰</button>
+
+        <h1>Mushrooms & Mixing Bowls</h1>
+
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search recipes...">
+            <button id="search-button">Search</button>
+        </div>
+
+    </header>
+
+    <nav id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">All Recipes</a>
+        <a href="#">Meals</a>
+        <a href="#">Dinner</a>
+        <a href="baking.html">Baking</a>
+        <a href="#">Snacks</a>
+        <a href="#">Sweets</a>
+        <a href="#">Drinks</a>
+    </nav>
+
+    <main>
+        <main>
+
+    <h2>Dinners</h2>
+
+    <div class="recipe-grid">
+
+        <article class="recipe-card">
+          <h3>Proscuitto Pesto Pasta</h3>
+          <p>A creamy pesto pasta with procuitto, tomato, spinach and spaghetti.</p>
+        </article>
+
+        <article class="recipe-card"> 
+            <h3>Korean Chicken</h3>
+            <p>Delicious, juicy korean chicken with white rice and seaweed.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe 3</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe 4</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe 5</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+        <article class="recipe-card">
+            <h3>Recipe 6</h3>
+            <p>A recipe description will go here.</p>
+        </article>
+
+    </div>
+
+</main>
+    </main>
+
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const sidebar = document.getElementById("sidebar");
+
+        // Open or close the sidebar when the menu button is clicked
+        menuButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            sidebar.classList.toggle("open");
+        });
+
+        // Stop clicks inside the sidebar from closing it
+        sidebar.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+        // Close the sidebar when clicking anywhere else
+        document.addEventListener("click", function () {
+            sidebar.classList.remove("open");
+        });
+    </script>
+
+</body>
+</html>
